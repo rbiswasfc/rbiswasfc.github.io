@@ -6,26 +6,37 @@
     <description>Recent content on Raja Biswas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jul 2019 21:12:08 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Aug 2019 21:11:12 +0800</lastBuildDate>
     
 	<atom:link href="https://rbiswasfc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>A bottom-up recommender System for travel destinations</title>
+      <link>https://rbiswasfc.github.io/posts/projects/deepfly/</link>
+      <pubDate>Sat, 03 Aug 2019 21:11:12 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/projects/deepfly/</guid>
+      <description>&amp;ndash; Project Status: Active Objective To develop a web based platform that gives personalized recommendations for travel destinations and activities based on user preferences. The recommendations will be accompanied with a list of directly comparable features pertaining to the suggested destinations, such that the user(s) can delve deeper and emerge with a satisfied choice.
+To this end, a bottom-up solution algorithm is adopted:
+ At the top level, a list of countries are considered Each country contains a list of travel destinations Each destination contains a list of Points Of Interest (POI)  We will predict the scores of the POIs based on user profile.</description>
+    </item>
+    
+    <item>
       <title>Japan</title>
-      <link>https://rbiswasfc.github.io/posts/travel/japan/</link>
+      <link>https://rbiswasfc.github.io/posts/tutorial/gce/</link>
       <pubDate>Wed, 10 Jul 2019 21:12:08 +0800</pubDate>
       
-      <guid>https://rbiswasfc.github.io/posts/travel/japan/</guid>
+      <guid>https://rbiswasfc.github.io/posts/tutorial/gce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nmt</title>
-      <link>https://rbiswasfc.github.io/posts/projects/nmt/</link>
+      <link>https://rbiswasfc.github.io/posts/projects/machine_translation/</link>
       <pubDate>Wed, 10 Jul 2019 21:09:48 +0800</pubDate>
       
-      <guid>https://rbiswasfc.github.io/posts/projects/nmt/</guid>
+      <guid>https://rbiswasfc.github.io/posts/projects/machine_translation/</guid>
       <description></description>
     </item>
     

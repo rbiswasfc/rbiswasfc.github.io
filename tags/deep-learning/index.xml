@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Science on Raja Biswas</title>
-    <link>https://rbiswasfc.github.io/tags/data-science/</link>
-    <description>Recent content in Data Science on Raja Biswas</description>
+    <title>Deep Learning on Raja Biswas</title>
+    <link>https://rbiswasfc.github.io/tags/deep-learning/</link>
+    <description>Recent content in Deep Learning on Raja Biswas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 Aug 2019 21:11:12 +0800</lastBuildDate>
     
-	<atom:link href="https://rbiswasfc.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rbiswasfc.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>&amp;ndash; Project Status: Active Objective To develop a web based platform that gives personalized recommendations for travel destinations and activities based on user preferences. The recommendations will be accompanied with a list of directly comparable features pertaining to the suggested destinations, such that the user(s) can delve deeper and emerge with a satisfied choice.
 To this end, a bottom-up solution algorithm is adopted:
  At the top level, a list of countries are considered Each country contains a list of travel destinations Each destination contains a list of Points Of Interest (POI)  We will predict the scores of the POIs based on user profile.</description>
-    </item>
-    
-    <item>
-      <title>National Data Science Challenge 2019 - Shopee</title>
-      <link>https://rbiswasfc.github.io/posts/projects/ndsc/</link>
-      <pubDate>Wed, 10 Apr 2019 21:10:24 +0800</pubDate>
-      
-      <guid>https://rbiswasfc.github.io/posts/projects/ndsc/</guid>
-      <description>Shopee, an e-commerce platform headquartered in Singapore, organized the National Data Science Challenge during February-March 2019, highlighting Singapore’s emphasis on driving the digital economy and the use of big data. I actively participated in this competition to apply machine learning skills for a real world commercial application. It was an enriching experience, with a bonus that my team (NYRS) secured the third position in the competition leaderboard. This article summarizes steps followed to solve the problem.</description>
     </item>
     
   </channel>

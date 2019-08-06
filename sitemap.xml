@@ -94,6 +94,35 @@
   </url>
   
   <url>
+    <loc>https://rbiswasfc.github.io/posts/projects/comp_homogenization/</loc>
+    <lastmod>2018-10-10T21:11:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/computational-homogenization/</loc>
+    <lastmod>2018-10-10T21:11:12+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/micormorphic-continuum/</loc>
+    <lastmod>2018-10-10T21:11:12+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/multi-scale-analysis/</loc>
+    <lastmod>2018-10-10T21:11:12+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/research/</loc>
+    <lastmod>2018-10-10T21:11:12+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://rbiswasfc.github.io/categories/</loc>
     <priority>0</priority>
   </url>

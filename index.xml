@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>A bottom-up recommender System for travel destinations</title>
+      <title>A bottom-up recommender system for travel destinations</title>
       <link>https://rbiswasfc.github.io/posts/projects/deepfly/</link>
       <pubDate>Sat, 03 Aug 2019 21:11:12 +0800</pubDate>
       
@@ -61,6 +61,15 @@ Steps The process involves the following steps:</description>
       <guid>https://rbiswasfc.github.io/about/</guid>
       <description>Creative, dynamic and self-driven researcher with expertise in problem identification, extracting data-driven insights and delivering efficient solutions. Keen interest in executing end-to-end machine learning projects to develop cutting edge AI applications. 5+ years of programming experience with strong proficiency in building deep learning models for computer vision and natural language processing.
 I am looking for opportunities in data science. Please feel free to get in touch with me at rajabiswas92@outlook.com or on social media (see the links on the sidebar).</description>
+    </item>
+    
+    <item>
+      <title>A micromorphic computational homogenization framework for composite materials</title>
+      <link>https://rbiswasfc.github.io/posts/projects/comp_homogenization/</link>
+      <pubDate>Wed, 10 Oct 2018 21:11:12 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/projects/comp_homogenization/</guid>
+      <description>This article summarizes my contributions in the field of computational mechanics during (first-part of) my graduate studies at National University of Singapore (NUS). My work resulted in development of a novel multi-scale computational homogenization framework for composite and auxetic structures. For this novel contribution, I achieved a Best Student Paper Award during the 2017 American Society of Civil Engineers EMI Conference in San Diego. To date, this work have been published in two top journals in mechanics, namely Journal of the Mechanics and Physics of Solids (JMPS) and Computer Methods in Applied Mechanics and Engineering (CMAME).</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multi-scale analysis on Raja Biswas</title>
+    <link>https://rbiswasfc.github.io/tags/multi-scale-analysis/</link>
+    <description>Recent content in Multi-scale analysis on Raja Biswas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 10 Oct 2018 21:11:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://rbiswasfc.github.io/tags/multi-scale-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A micromorphic computational homogenization framework for composite materials</title>
+      <link>https://rbiswasfc.github.io/posts/projects/comp_homogenization/</link>
+      <pubDate>Wed, 10 Oct 2018 21:11:12 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/projects/comp_homogenization/</guid>
+      <description>This article summarizes my contributions in the field of computational mechanics during (first-part of) my graduate studies at National University of Singapore (NUS). My work resulted in development of a novel multi-scale computational homogenization framework for composite and auxetic structures. For this novel contribution, I achieved a Best Student Paper Award during the 2017 American Society of Civil Engineers EMI Conference in San Diego. To date, this work have been published in two top journals in mechanics, namely Journal of the Mechanics and Physics of Solids (JMPS) and Computer Methods in Applied Mechanics and Engineering (CMAME).</description>
+    </item>
+    
+  </channel>
+</rss>

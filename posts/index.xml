@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>A bottom-up recommender System for travel destinations</title>
+      <title>A bottom-up recommender system for travel destinations</title>
       <link>https://rbiswasfc.github.io/posts/projects/deepfly/</link>
       <pubDate>Sat, 03 Aug 2019 21:11:12 +0800</pubDate>
       
@@ -51,6 +51,15 @@ To this end, a bottom-up solution algorithm is adopted:
       <description>Google Compute Engine (GCE) is a component of Google Cloud Platform (GCP), which enables users to launch virtual machines (VMs) on demand. As per the project requirements, VMs can support the use of SSD and GPUs. In this article, I will summarize how to setup a GCE VM for solving data science related problems.
 NB: this document is for my future reference.
 Steps The process involves the following steps:</description>
+    </item>
+    
+    <item>
+      <title>A micromorphic computational homogenization framework for composite materials</title>
+      <link>https://rbiswasfc.github.io/posts/projects/comp_homogenization/</link>
+      <pubDate>Wed, 10 Oct 2018 21:11:12 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/projects/comp_homogenization/</guid>
+      <description>This article summarizes my contributions in the field of computational mechanics during (first-part of) my graduate studies at National University of Singapore (NUS). My work resulted in development of a novel multi-scale computational homogenization framework for composite and auxetic structures. For this novel contribution, I achieved a Best Student Paper Award during the 2017 American Society of Civil Engineers EMI Conference in San Diego. To date, this work have been published in two top journals in mechanics, namely Journal of the Mechanics and Physics of Solids (JMPS) and Computer Methods in Applied Mechanics and Engineering (CMAME).</description>
     </item>
     
   </channel>

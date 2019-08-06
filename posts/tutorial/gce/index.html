@@ -17,19 +17,23 @@
     
     
 
-<title>Japan • Raja Biswas</title>
+<title>Google Compute Engine setup for data science projects • Raja Biswas</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Japan"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Google Compute Engine setup for data science projects"/>
+<meta name="twitter:description" content="Google Compute Engine (GCE) is a component of Google Cloud Platform (GCP), which enables users to launch virtual machines (VMs) on demand. As per the project requirements, VMs can support the use of SSD and GPUs. In this article, I will summarize how to setup a GCE VM for solving data science related problems.
+NB: this document is for my future reference.
+Steps The process involves the following steps:"/>
 
-<meta property="og:title" content="Japan" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Google Compute Engine setup for data science projects" />
+<meta property="og:description" content="Google Compute Engine (GCE) is a component of Google Cloud Platform (GCP), which enables users to launch virtual machines (VMs) on demand. As per the project requirements, VMs can support the use of SSD and GPUs. In this article, I will summarize how to setup a GCE VM for solving data science related problems.
+NB: this document is for my future reference.
+Steps The process involves the following steps:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rbiswasfc.github.io/posts/tutorial/gce/" />
-<meta property="article:published_time" content="2019-07-10T21:12:08&#43;08:00"/>
-<meta property="article:modified_time" content="2019-07-10T21:12:08&#43;08:00"/><meta property="og:site_name" content="IMbbb" />
+<meta property="article:published_time" content="2019-02-01T21:12:08&#43;08:00"/>
+<meta property="article:modified_time" content="2019-02-01T21:12:08&#43;08:00"/><meta property="og:site_name" content="IMbbb" />
 
 
     
@@ -158,20 +162,39 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>Japan</h1>
+    <h1>Google Compute Engine setup for data science projects</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Jul 10, 2019
+      <i class="fas fa-calendar-alt"></i> Feb 1, 2019
     
     
     
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/deep-learning">deep learning</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/gce">gce</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/gcp">gcp</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/gpu">gpu</a>
+          
+      
     
     
     <br/>
-    <i class="fas fa-clock"></i> 0 min read
+    <i class="fas fa-clock"></i> 7 min read
 </div>
 
 
@@ -180,19 +203,416 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   <div class="post">
     
+
+<p><a href="https://cloud.google.com/compute/">Google Compute Engine</a> (GCE) is a component of Google Cloud Platform (GCP), which enables users to launch virtual machines (VMs) on demand. As per the project requirements, VMs can support the use of SSD and GPUs. In this article, I will summarize how to setup a GCE VM for solving data science related problems.</p>
+
+<p>NB: this document is for my future reference.</p>
+
+<h3 id="steps">Steps</h3>
+
+<p>The process involves the following steps:</p>
+
+<ul>
+<li>Creating a virtual instance</li>
+<li>Install basic packages</li>
+<li>Create an image for future VMs</li>
+<li>Set up Google Bucket</li>
+<li>Adding SSD disks to the instance</li>
+<li>Migrating files and folders from Google Storage to SSD disk</li>
+<li>GPU Set up</li>
+<li>Set up Jupyter Lab</li>
+</ul>
+
+<h3 id="creating-a-virtual-instance">Creating a virtual instance</h3>
+
+<p>Before you begin, you will need to have:</p>
+
+<ul>
+<li>A Gmail account linked with Google Cloud Platform (GCP)</li>
+<li>Enable billing for the GCP account with debit/credit card</li>
+<li>Upon logging into GCP, navigate to Google Compute Engine (GCE) &gt; VM instances</li>
+
+<li><p>Click on create instance. For the current project, I selected the following options to create the VM instance</p>
+
+<ul>
+<li>Name: dyslexia-untied</li>
+<li>Region: asia-southeast1 (Singaopre)    Zone: asia-southeast1-b</li>
+<li>Machine type: 4 vCPU</li>
+<li>Memory (RAM): 16 GB</li>
+<li>GPUs: NVIDIA Tesla P4</li>
+<li>OS images: Ubuntu 16.04 LTS</li>
+<li>Boot disk type: Standard persistent disk (50 GB)</li>
+<li>Identity and API access: Check &ldquo;Allow full access to all Cloud APIs&rdquo;</li>
+<li>Check &ldquo;Allow HTTP traffic&rdquo; and &ldquo;Allow HTTPS traffic&rdquo;</li>
+</ul>
+
+<p>These settings are illustrated in the following image:</p></li>
+</ul>
+
+<p><img src="/img/GCE/VM-GCE.png" alt="settings" /></p>
+
+<p>NOTE: Once you have created the VM, and set it running, you can open up a terminal by pressing SSH button.</p>
+
+<h3 id="install-basic-packages">Install basic packages</h3>
+
+<h5 id="anaconda">Anaconda</h5>
+
+<p>Anaconda is a free and open-source distribution of python and R programming languages for data science, and machine learning applications.</p>
+
+<p>Create a downloads directory, and switch into it.</p>
+
+<pre><code class="language-html">mkdir downloads
+cd downloads
+</code></pre>
+
+<p>Download and install the <a href="https://www.anaconda.com/distribution/#download-section">latest Anaconda build</a> for linux:</p>
+
+<pre><code class="language-html">wget http://repo.continuum.io/archive/Anaconda3-2018.12-Linux-x86_64.sh
+bash Anaconda3-2018.12-Linux-x86_64.sh
+</code></pre>
+
+<p>Follow the on screen instructions. The defaults should work fine, but make sure you answer yes to the last question about prepending the install location to PATH:</p>
+
+<pre><code class="language-html">Do you wish the installer to prepend the Anaconda3 install location to PATH
+in your /home/[username]/.bashrc? [yes|no][no] &gt;&gt;&gt; yes
+</code></pre>
+
+<p>To make use of Anaconda, reboot VM and connect to it</p>
+
+<pre><code class="language-html">sudo reboot
+</code></pre>
+
+<h5 id="install-unzip-and-pv">Install unzip and pv</h5>
+
+<p>You are very likely to download <em>zip</em> archives to your VMs, so get the unzip utility installed:</p>
+
+<pre><code class="language-html">sudo apt-get install unzip
+</code></pre>
+
+<p>For extracting big tar files with progress bar use pv. Go to the root directory and install pv</p>
+
+<pre><code class="language-html">cd ~
+sudo apt-get install pv
+</code></pre>
+
+<p>Extract tar files using pv e.g.</p>
+
+<pre><code class="language-html">pv mobile_image.tar.gz `| tar xzf -
+</code></pre>
+
+<p>Delete tar files to free up space</p>
+
+<pre><code class="language-html">rm mobile_image.tar.gz
+</code></pre>
+
+<p><img src="/img/GCE/ssd_extract_rm.PNG" alt="pv" /></p>
+
+<h5 id="gcsfuse">gcsfuse</h5>
+
+<p>Add the gcsfuse distribution URL as a package source and import its public key:</p>
+
+<pre><code class="language-html">export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
+
+echo &quot;deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main&quot;| sudo tee
+/etc/apt/sources.list.d/gcsfuse.list
+
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+</code></pre>
+
+<p>Update the list of packages available and install gcsfuse</p>
+
+<pre><code class="language-html">sudo apt-get update
+sudo apt-get install gcsfuse
+</code></pre>
+
+<h3 id="create-an-image-for-future-vms">Create an image for future VMs</h3>
+
+<p>You now create a disk image of the VM you have built, you can create a new VM instance with all this software pre-installed.</p>
+
+<ul>
+<li><p>First of all, stop your VM using the VM instance console.</p></li>
+
+<li><p>Now go to Compute Engine &gt; Images, and select CREATE IMAGE. From the dropdown menu, select  source disk as the VM on which you have installed Anaconda, unzip etc.</p></li>
+</ul>
+
+<p><img src="/img/GCE/image_disk.png" alt="disk" /></p>
+
+<ul>
+<li>Navigate again to the Compute Engine — VM instances page, select ‘Create Instance’, press ‘Change’ on the Boot disk panel, and select ‘Custom Images’. You should see the disk image you just created available for you as a boot disk. If you now create a new VM from this image, it will have all the software (and conda virtual env) you just installed already installed and ready to use.</li>
+</ul>
+
+<h3 id="set-up-google-bucket">Set up Google Bucket</h3>
+
+<ul>
+<li><p>Creating a storage bucket is straightforward. Take the Google Cloud Storage <a href="https://console.cloud.google.com/marketplace/details/google-cloud-platform/cloud-storage">Quickstart tutorial</a> to walk you through it.</p></li>
+
+<li><p>I have created a bucket called <strong>rbiswasfc</strong> as follows:</p></li>
+</ul>
+
+<p><img src="/img/GCE/Bucket.png" alt="bucket" /></p>
+
+<p>Remember to choose the same geographic location as VM instance for smooth data transfer.</p>
+
+<h3 id="adding-persistent-disks-ssd">Adding Persistent Disks (SSD)</h3>
+
+<p>Navigate to your GCE VM instance details and click on edit. In the additional disk section, click on add new disk. Subsequently, fill up the details in the pop up window as per your needs, e.g.</p>
+
+<p><img src="/img/GCE/SSD.png" alt="ssd" /></p>
+
+<p>Mount the disk by executing the following sequence:</p>
+
+<p>List the disks that are attached to the instance and find the disk that you want to format and mount. Run the following command</p>
+
+<pre><code>sudo lsblk
+</code></pre>
+
+<p><img src="/img/GCE/add_disk_lsb.PNG" alt="lsbk" /></p>
+
+<p>Format the content of sdb</p>
+
+<pre><code class="language-html">sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
+</code></pre>
+
+<p><img src="/img/GCE/format_lsb.PNG" alt="rlsblk" /></p>
+
+<p>Make directory for mounting the disk. Here I am creating /mnt/disks/NDSC for storing my documents</p>
+
+<pre><code class="language-html">sudo mkdir -p /mnt/disks/NDSC
+</code></pre>
+
+<p>Mount the disk</p>
+
+<pre><code class="language-html">sudo mount -o discard,defaults /dev/sdb /mnt/disks/NDSC
+</code></pre>
+
+<p>Give reading and writing permissions</p>
+
+<pre><code class="language-html">sudo chmod a+w /mnt/disks/NDSC
+</code></pre>
+
+<p><img src="/img/GCE/mount_ssd.PNG" alt="mountSSD" /></p>
+
+<p>To automate mounting the SSD disk upon restarting the VM, execute the following:</p>
+
+<p>Create a backup of your current /etc/fstab file</p>
+
+<pre><code class="language-html">sudo cp /etc/fstab /etc/fstab.backup
+</code></pre>
+
+<p>Use the blkid command to find the UUID for the zonal persistent disk.</p>
+
+<pre><code class="language-html">sudo blkid /dev/sdb
+</code></pre>
+
+<p>Open the /etc/fstab file in a text editor and create an entry that includes the UUID. Make sure to use your correct disk name inplace of &lsquo;NDSC&rsquo;</p>
+
+<pre><code class="language-html">echo UUID=`sudo blkid -s UUID -o value /dev/sdb` /mnt/disks/NDSC ext4
+discard,defaults,nofail 0 2 | sudo tee -a /etc/fstab
+</code></pre>
+
+<p>Use the cat command to verify that your /etc/fstab entries are correct:</p>
+
+<pre><code class="language-html">cat /etc/fstab
+</code></pre>
+
+<h3 id="transfering-files-from-google-bucket-to-persistent-ssd">Transfering files from Google bucket to Persistent SSD</h3>
+
+<p>Now I need to transfer the project data from Google Bucket: rbiswas to my SSD</p>
+
+<ul>
+<li>First go the mounted directory</li>
+</ul>
+
+<pre><code class="language-html">cd /mnt/disks/NDSC
+</code></pre>
+
+<ul>
+<li>Copy and paste</li>
+</ul>
+
+<pre><code class="language-html">gsutil cp gs://rbiswasfc/raja/*
+</code></pre>
+
+<p><img src="/img/GCE/mg_bucket_ssd.PNG" alt="Migration" /></p>
+
+<h3 id="gpu-set-up">GPU  Set up</h3>
+
+<p>The basic steps to set up GPU are as follows:</p>
+
+<ul>
+<li><p>Apply for GPU quota. May take 1-2 days to get approved.</p>
+
+<ul>
+<li>To apply for quota, go to IAM &amp; admin &gt; Quotas and select the options as shown below:</li>
+</ul></li>
+</ul>
+
+<p><img src="/img/GCE/gpu_quota.png" alt="GPUq" /></p>
+
+<ul>
+<li><p>Make sure you have GPU limit set to at least 1 else choose the limit from &ldquo;EDIT QUOTAS&rdquo;. After resolving the GPU limit, open up a VM with GPU.</p></li>
+
+<li><p>Install CUDA (drivers for GPU) by executing the following commands:</p>
+
+<ul>
+<li>Download the CUDA Toolkit</li>
+</ul>
+
+<pre><code class="language-html">curl -O http://developer.download.nvidia.com/compute/cuda/repos/
+ubuntu1604/x86_64/cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
+</code></pre>
+
+<ul>
+<li>Use <code>dpkg</code> command to add the repository to your system</li>
+</ul>
+
+<pre><code class="language-html">sudo dpkg -i cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
+</code></pre>
+
+<ul>
+<li>Use the <code>apt-key</code> command to authenticate the download</li>
+</ul>
+
+<pre><code class="language-html">sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+</code></pre>
+
+<ul>
+<li>Update the package lists:</li>
+</ul>
+
+<pre><code class="language-html">sudo apt-get update
+</code></pre>
+
+<ul>
+<li>Install CUDA</li>
+</ul>
+
+<pre><code class="language-html">sudo apt-get install cuda-10-0
+</code></pre>
+
+<ul>
+<li>Enable persistence mode</li>
+</ul>
+
+<pre><code class="language-html">sudo nvidia-smi -pm 1
+</code></pre>
+
+<ul>
+<li>The following commands should setup the environment variables and add them to run command (rc) script file. Next, remember to source the rc file so that we can use them straightaway.</li>
+</ul>
+
+<pre><code class="language-html">echo 'export CUDA_HOME=/usr/local/cuda' &gt;&gt; ~/.bashrc
+
+echo 'export PATH=$PATH:$CUDA_HOME/bin' &gt;&gt; ~/.bashrc
+
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/lib64' &gt;&gt; ~/.bashrc
+
+source ~/.bashrc
+</code></pre>
+
+<ul>
+<li>Reboot</li>
+</ul>
+
+<pre><code class="language-html">sudo reboot
+</code></pre>
+
+<ul>
+<li>Verify its all working properly and GPU is recognized</li>
+</ul>
+
+<pre><code class="language-html">nvidia-smi
+</code></pre>
+
+<p><img src="/img/GCE/gpu-check-working.PNG" alt="GPU verify" /></p>
+
+<h5 id="install-cudnn">Install cuDNN</h5>
+
+<p>To download the installation files, please proceed to <a href="https://developer.nvidia.com/cudnn">https://developer.nvidia.com/cudnn</a> to register for an account.</p>
+
+<p><img src="/img/GCE/nvidia_account.png" alt="cudnn" /></p>
+
+<p>Once your account has been created and verified, proceed to download the cuDNN library which is compatible with installed CUDA version.</p>
+
+<p>Download the cuDNN library from <a href="https://developer.nvidia.com/rdp/cudnn-download">https://developer.nvidia.com/rdp/cudnn-download</a>.</p>
+
+<p>In my case, I downloaded cuDNN v7.5.0 (Feb 25, 2019), for CUDA 10.1. Upload the installation file in your Google bucket.</p>
+
+<p>Copy the installation file from Google bucket to VM</p>
+
+<pre><code class="language-html">cd ~
+
+gsutil cp gs://rbiswas/* .
+</code></pre></li>
+</ul>
+
+<p>Please replace rbiswas with your bucket name.</p>
+
+<p>Once the file has been uploaded to GCP instance, unpack and move the files as root.</p>
+
+<pre><code class="language-html">tar xzvf cudnn-8.0-linux-x64-v6.0.tgz
+
+sudo cp cuda/lib64/* /usr/local/cuda/lib64/
+
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+</code></pre>
+
+<h5 id="install-tensorflow-gpu">Install tensorflow-gpu</h5>
+
+<pre><code class="language-html">conda create --name tf_gpu tensorflow-gpu
+
+source activate tf_gpu
+</code></pre>
+
+<p>To make tf_gpu kernal available in jupyter lab, install the following</p>
+
+<pre><code class="language-html">conda install jupyter
+
+conda install nb_conda
+
+conda install ipykernel
+
+python -m ipykernel install --user --name tf_gpu --display-name &quot;Python (tf_gpu)&quot;
+</code></pre>
+
+<p>Install other python libraries as need arises using pip (after activating tf_gpu using source activate). For example, to install keras execute</p>
+
+<pre><code class="language-html">source activate tf_gpu
+
+pip install keras
+</code></pre>
+
+<h3 id="set-up-jupyter-lab">Set up Jupyter Lab</h3>
+
+<ul>
+<li>From your desired directory, execute</li>
+</ul>
+
+<pre><code class="language-html">jupyter lab --ip=0.0.0.0 --port=8888 --no-browser &amp;
+</code></pre>
+
+<ul>
+<li><p>Copy the generated token</p></li>
+
+<li><p>Now, go to your browser and type xx.xxx.xxx.xxx:8888 (replace x with your external IP of your VM). You will need the generated token to authenticate jupyter lab.</p></li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://medium.com/google-cloud/using-a-gpu-tensorflow-on-google-cloud-platform-1a2458f42b0">https://medium.com/google-cloud/using-a-gpu-tensorflow-on-google-cloud-platform-1a2458f42b0</a></li>
+<li><a href="https://blog.cambridgespark.com/an-ideal-data-science-environment-on-a-google-virtual-machine-3bb40789b71b">https://blog.cambridgespark.com/an-ideal-data-science-environment-on-a-google-virtual-machine-3bb40789b71b</a>
+*</li>
+</ul>
+
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/posts/projects/machine_translation/" class="navigation-prev">
-      <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Nmt</span>
-    </a>
     
-    
-    <a href="/posts/projects/deepfly/" class="navigation-next">
-      <span class="navigation-tittle">A bottom-up recommender System for travel destinations</span>
+    <a href="/posts/projects/ndsc/" class="navigation-next">
+      <span class="navigation-tittle">National Data Science Challenge 2019 - Shopee</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>
     

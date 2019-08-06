@@ -30,6 +30,24 @@
     </item>
     
     <item>
+      <title>NLP</title>
+      <link>https://rbiswasfc.github.io/tags/nlp/</link>
+      <pubDate>Fri, 12 Jul 2019 21:09:48 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PyTorch</title>
+      <link>https://rbiswasfc.github.io/tags/pytorch/</link>
+      <pubDate>Fri, 12 Jul 2019 21:09:48 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/tags/pytorch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>CNN</title>
       <link>https://rbiswasfc.github.io/tags/cnn/</link>
       <pubDate>Wed, 10 Apr 2019 21:10:24 +0800</pubDate>
@@ -39,11 +57,29 @@
     </item>
     
     <item>
-      <title>NLP</title>
-      <link>https://rbiswasfc.github.io/tags/nlp/</link>
-      <pubDate>Wed, 10 Apr 2019 21:10:24 +0800</pubDate>
+      <title>GCE</title>
+      <link>https://rbiswasfc.github.io/tags/gce/</link>
+      <pubDate>Fri, 01 Feb 2019 21:12:08 +0800</pubDate>
       
-      <guid>https://rbiswasfc.github.io/tags/nlp/</guid>
+      <guid>https://rbiswasfc.github.io/tags/gce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP</title>
+      <link>https://rbiswasfc.github.io/tags/gcp/</link>
+      <pubDate>Fri, 01 Feb 2019 21:12:08 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/tags/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPU</title>
+      <link>https://rbiswasfc.github.io/tags/gpu/</link>
+      <pubDate>Fri, 01 Feb 2019 21:12:08 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/tags/gpu/</guid>
       <description></description>
     </item>
     

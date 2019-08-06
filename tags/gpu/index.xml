@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPU on Raja Biswas</title>
+    <link>https://rbiswasfc.github.io/tags/gpu/</link>
+    <description>Recent content in GPU on Raja Biswas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Feb 2019 21:12:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://rbiswasfc.github.io/tags/gpu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Compute Engine setup for data science projects</title>
+      <link>https://rbiswasfc.github.io/posts/tutorial/gce/</link>
+      <pubDate>Fri, 01 Feb 2019 21:12:08 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/tutorial/gce/</guid>
+      <description>Google Compute Engine (GCE) is a component of Google Cloud Platform (GCP), which enables users to launch virtual machines (VMs) on demand. As per the project requirements, VMs can support the use of SSD and GPUs. In this article, I will summarize how to setup a GCE VM for solving data science related problems.
+NB: this document is for my future reference.
+Steps The process involves the following steps:</description>
+    </item>
+    
+  </channel>
+</rss>

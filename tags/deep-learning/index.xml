@@ -22,5 +22,16 @@ To this end, a bottom-up solution algorithm is adopted:
  At the top level, a list of countries are considered Each country contains a list of travel destinations Each destination contains a list of Points Of Interest (POI)  We will predict the scores of the POIs based on user profile.</description>
     </item>
     
+    <item>
+      <title>Google Compute Engine setup for data science projects</title>
+      <link>https://rbiswasfc.github.io/posts/tutorial/gce/</link>
+      <pubDate>Fri, 01 Feb 2019 21:12:08 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/tutorial/gce/</guid>
+      <description>Google Compute Engine (GCE) is a component of Google Cloud Platform (GCP), which enables users to launch virtual machines (VMs) on demand. As per the project requirements, VMs can support the use of SSD and GPUs. In this article, I will summarize how to setup a GCE VM for solving data science related problems.
+NB: this document is for my future reference.
+Steps The process involves the following steps:</description>
+    </item>
+    
   </channel>
 </rss>

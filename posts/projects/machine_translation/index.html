@@ -17,19 +17,23 @@
     
     
 
-<title>Nmt • Raja Biswas</title>
+<title>Neural Machine Translation using Encoder-Decoder Networks • Raja Biswas</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Nmt"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Neural Machine Translation using Encoder-Decoder Networks"/>
+<meta name="twitter:description" content="&ndash; Project Status: Active In this project, I aim at building different sequence to sequence machine learning models for Spanish to English translation task using PyTorch. The Sequence to sequence or &ldquo;Seq2Seq&rdquo; is an end-to-end model comprising of two recurrent neural networks:
+ An Encoder: takes sentences in the source language as input and encodes them into finite dimensional context vectors;
+ A Decoder: uses the context vector as a seed from which the translated sentences are generated."/>
 
-<meta property="og:title" content="Nmt" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Neural Machine Translation using Encoder-Decoder Networks" />
+<meta property="og:description" content="&ndash; Project Status: Active In this project, I aim at building different sequence to sequence machine learning models for Spanish to English translation task using PyTorch. The Sequence to sequence or &ldquo;Seq2Seq&rdquo; is an end-to-end model comprising of two recurrent neural networks:
+ An Encoder: takes sentences in the source language as input and encodes them into finite dimensional context vectors;
+ A Decoder: uses the context vector as a seed from which the translated sentences are generated." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rbiswasfc.github.io/posts/projects/machine_translation/" />
-<meta property="article:published_time" content="2019-07-10T21:09:48&#43;08:00"/>
-<meta property="article:modified_time" content="2019-07-10T21:09:48&#43;08:00"/><meta property="og:site_name" content="IMbbb" />
+<meta property="article:published_time" content="2019-07-12T21:09:48&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-12T21:09:48&#43;08:00"/><meta property="og:site_name" content="IMbbb" />
 
 
     
@@ -158,20 +162,33 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>Nmt</h1>
+    <h1>Neural Machine Translation using Encoder-Decoder Networks</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Jul 10, 2019
+      <i class="fas fa-calendar-alt"></i> Jul 12, 2019
     
     
     
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/nlp">nlp</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/pytorch">pytorch</a>
+          
+      
     
     
     <br/>
-    <i class="fas fa-clock"></i> 0 min read
+    <i class="fas fa-clock"></i> 3 min read
 </div>
 
 
@@ -180,6 +197,124 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   <div class="post">
     
+
+<h4 id="project-status-active">&ndash; Project Status: Active</h4>
+
+<p>In this project, I aim at building different sequence to sequence machine learning models for Spanish to English translation task using PyTorch. The Sequence to sequence or &ldquo;Seq2Seq&rdquo;  is an end-to-end model comprising of two recurrent neural networks:</p>
+
+<ul>
+<li><p>An Encoder: takes sentences in the source language as input and encodes them into finite dimensional context vectors;</p></li>
+
+<li><p>A Decoder: uses the context vector as a seed from which the translated sentences are generated.</p></li>
+</ul>
+
+<p>For the NMT task, I have adopted four different Seq2Seq architectures:</p>
+
+<ul>
+<li>LSTM Encoder-Decoder</li>
+<li>LSTM Encoder-Decoder with attention</li>
+<li>Sub-word modelling with character level CNN</li>
+<li>The Transformer model</li>
+</ul>
+
+<p>Brief explanations of each approaches are provided in the following.</p>
+
+<h4 id="lstm-encoder-decoder-network-https-github-com-rbiswasfc-machine-translation-blob-master-vanilla-lstm-lstm-encoder-decoder-vanilla-ipynb"><a href="https://github.com/rbiswasfc/Machine-Translation/blob/master/Vanilla-LSTM/LSTM-Encoder-Decoder-Vanilla.ipynb">LSTM Encoder-Decoder Network</a></h4>
+
+<p>The architecture of LSTM Encoder-Decoder Network is illustrated below</p>
+
+<p><img src="/img/NMT/Vanilla_LSTM.PNG" alt="NMT" /></p>
+
+<p>A bi-directional LSTM is used as Encoder, since  a word in a sentence can have a dependency on another word before or after it.
+The encoder encapsulates information in the source sentence into a context vector, which acts as initial hidden state for the Decoder network.
+The implementation of the model is elaborated in this <a href="https://github.com/rbiswasfc/Machine-Translation/blob/master/Vanilla-LSTM/LSTM-Encoder-Decoder-Vanilla.ipynb">Jupyter Notebook</a>.</p>
+
+<h5 id="remarks">Remarks</h5>
+
+<ul>
+<li><p>It is difficult to compress an arbitrary-length source sequence into
+a single fixed-size context vector. The issue can be mitigated by building Encoder with stacked LSTM layers: each layer’s outputs are the input sequence to
+the next layer.</p></li>
+
+<li><p>Seq2Seq models are known to lose effectiveness on very long inputs, a consequence of the practical limits of
+LSTMs. Encoder-Decoder network with attention mechanism can help in capturing long term dependency.</p></li>
+</ul>
+
+<h4 id="lstm-encoder-decoder-with-attention-https-github-com-rbiswasfc-machine-translation-blob-master-lstm-with-attention-encoder-decoder-w-attention-ipynb"><a href="https://github.com/rbiswasfc/Machine-Translation/blob/master/LSTM-with-attention/Encoder_Decoder_w_Attention.ipynb">LSTM Encoder-Decoder with Attention</a></h4>
+
+<ul>
+<li>Global Attention Model (Luong, et al. 2015)</li>
+</ul>
+
+<h5 id="remarks-1">Remarks</h5>
+
+<ul>
+<li>Needs better handling of <UNK> tokens generated during translation</li>
+<li>Cannot use full GPU acceleration due to auto-regressive nature</li>
+</ul>
+
+<h4 id="sub-word-modelling-with-character-level-cnn-https-github-com-rbiswasfc-machine-translation-blob-master-sub-word-machine-translation-char-based-ipynb"><a href="https://github.com/rbiswasfc/Machine-Translation/blob/master/sub-word/Machine-Translation-Char-Based.ipynb">Sub-word modelling with character level CNN</a></h4>
+
+<p>Hybrid model. Better UNK handling.</p>
+
+<h5 id="remarks-2">Remarks</h5>
+
+<ul>
+<li>Computationally expensive</li>
+</ul>
+
+<h4 id="the-transformer-model-https-github-com-rbiswasfc-machine-translation-blob-master-the-transformer-thetransformer-ipynb"><a href="https://github.com/rbiswasfc/Machine-Translation/blob/master/the-transformer/TheTransformer.ipynb">The Transformer model</a></h4>
+
+<p>tbc</p>
+
+<h5 id="remarks-3">Remarks</h5>
+
+<ul>
+<li>It can utilize full GPU acceleration</li>
+</ul>
+
+<h3 id="training">Training</h3>
+
+<h4 id="dataset">Dataset</h4>
+
+<p>The tarin, dev and test dataset are located here. It contains the follwing files</p>
+
+<h4 id="initialization-and-optimization">Initialization and Optimization</h4>
+
+<p>Uniform initialization. Adam optimizer. The model is trained in GPU in google colab.</p>
+
+<h3 id="evaluation">Evaluation</h3>
+
+<p>BLEU is used to evaluate the model performance. The following scores are achieved</p>
+
+<ul>
+<li>LSTM</li>
+<li>Attn</li>
+<li>Sub-word</li>
+<li>Transformer: Needs to train</li>
+</ul>
+
+<h3 id="to-do-list">To-do list</h3>
+
+<ul>
+<li>Train the transformer</li>
+<li>Investigate different initialization</li>
+<li>Build stacked LSTM encoder-decoder with attention</li>
+<li>Plot attention and demonstrate alignment during translation</li>
+<li>Learning rate scheduler</li>
+<li>Use the model architecture for other open-source machine translation datasets</li>
+</ul>
+
+<h3 id="credits">Credits</h3>
+
+<p>This project uses the public resources provided in <a href="http://web.stanford.edu/class/cs224n/"><em>CS224n: Natural Language Processing with Deep Learning</em></a> Stanford / Winter 2019 course. I am thankful to the lecturers and TAs for offering such amazing contents. I believe this course is one of the best places to learn NLP in 2019.</p>
+
+<h3 id="contact">Contact</h3>
+
+<ul>
+<li>Raja Biswas: rajabiswas92@outlook.com</li>
+</ul>
+
   </div>
   
 
@@ -191,8 +326,8 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     </a>
     
     
-    <a href="/posts/tutorial/gce/" class="navigation-next">
-      <span class="navigation-tittle">Japan</span>
+    <a href="/posts/projects/deepfly/" class="navigation-next">
+      <span class="navigation-tittle">A bottom-up recommender System for travel destinations</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>
     

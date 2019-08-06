@@ -23,21 +23,14 @@ To this end, a bottom-up solution algorithm is adopted:
     </item>
     
     <item>
-      <title>Japan</title>
-      <link>https://rbiswasfc.github.io/posts/tutorial/gce/</link>
-      <pubDate>Wed, 10 Jul 2019 21:12:08 +0800</pubDate>
-      
-      <guid>https://rbiswasfc.github.io/posts/tutorial/gce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nmt</title>
+      <title>Neural Machine Translation using Encoder-Decoder Networks</title>
       <link>https://rbiswasfc.github.io/posts/projects/machine_translation/</link>
-      <pubDate>Wed, 10 Jul 2019 21:09:48 +0800</pubDate>
+      <pubDate>Fri, 12 Jul 2019 21:09:48 +0800</pubDate>
       
       <guid>https://rbiswasfc.github.io/posts/projects/machine_translation/</guid>
-      <description></description>
+      <description>&amp;ndash; Project Status: Active In this project, I aim at building different sequence to sequence machine learning models for Spanish to English translation task using PyTorch. The Sequence to sequence or &amp;ldquo;Seq2Seq&amp;rdquo; is an end-to-end model comprising of two recurrent neural networks:
+ An Encoder: takes sentences in the source language as input and encodes them into finite dimensional context vectors;
+ A Decoder: uses the context vector as a seed from which the translated sentences are generated.</description>
     </item>
     
     <item>
@@ -47,6 +40,17 @@ To this end, a bottom-up solution algorithm is adopted:
       
       <guid>https://rbiswasfc.github.io/posts/projects/ndsc/</guid>
       <description>Shopee, an e-commerce platform headquartered in Singapore, organized the National Data Science Challenge during February-March 2019, highlighting Singapore’s emphasis on driving the digital economy and the use of big data. I actively participated in this competition to apply machine learning skills for a real world commercial application. It was an enriching experience, with a bonus that my team (NYRS) secured the third position in the competition leaderboard. This article summarizes steps followed to solve the problem.</description>
+    </item>
+    
+    <item>
+      <title>Google Compute Engine setup for data science projects</title>
+      <link>https://rbiswasfc.github.io/posts/tutorial/gce/</link>
+      <pubDate>Fri, 01 Feb 2019 21:12:08 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/tutorial/gce/</guid>
+      <description>Google Compute Engine (GCE) is a component of Google Cloud Platform (GCP), which enables users to launch virtual machines (VMs) on demand. As per the project requirements, VMs can support the use of SSD and GPUs. In this article, I will summarize how to setup a GCE VM for solving data science related problems.
+NB: this document is for my future reference.
+Steps The process involves the following steps:</description>
     </item>
     
   </channel>

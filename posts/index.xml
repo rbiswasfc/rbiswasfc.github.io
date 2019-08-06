@@ -20,5 +20,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Nmt</title>
+      <link>https://rbiswasfc.github.io/posts/projects/nmt/</link>
+      <pubDate>Wed, 10 Jul 2019 21:09:48 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/projects/nmt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>National Data Science Challenge 2019 - Shopee</title>
+      <link>https://rbiswasfc.github.io/posts/projects/ndsc/</link>
+      <pubDate>Wed, 10 Apr 2019 21:10:24 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/projects/ndsc/</guid>
+      <description>Shopee, an e-commerce platform headquartered in Singapore, organized the National Data Science Challenge during February-March 2019, highlighting Singapore’s emphasis on driving the digital economy and the use of big data. I actively participated in this competition to apply machine learning skills for a real world commercial application. It was an enriching experience, with a bonus that my team (NYRS) secured the third position in the competition leaderboard. This article summarizes steps followed to solve the problem.</description>
+    </item>
+    
   </channel>
 </rss>

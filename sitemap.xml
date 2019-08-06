@@ -20,12 +20,41 @@
   </url>
   
   <url>
-    <loc>https://rbiswasfc.github.io/categories/</loc>
+    <loc>https://rbiswasfc.github.io/posts/projects/nmt/</loc>
+    <lastmod>2019-07-10T21:09:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/cnn/</loc>
+    <lastmod>2019-04-10T21:10:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://rbiswasfc.github.io/tags/data-science/</loc>
+    <lastmod>2019-04-10T21:10:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/nlp/</loc>
+    <lastmod>2019-04-10T21:10:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/posts/projects/ndsc/</loc>
+    <lastmod>2019-04-10T21:10:24+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rbiswasfc.github.io/tags/</loc>
+    <lastmod>2019-04-10T21:10:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   

@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Raja Biswas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 10 Apr 2019 21:10:24 +0800</lastBuildDate>
     
 	<atom:link href="https://rbiswasfc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CNN</title>
+      <link>https://rbiswasfc.github.io/tags/cnn/</link>
+      <pubDate>Wed, 10 Apr 2019 21:10:24 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/tags/cnn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>https://rbiswasfc.github.io/tags/data-science/</link>
+      <pubDate>Wed, 10 Apr 2019 21:10:24 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NLP</title>
+      <link>https://rbiswasfc.github.io/tags/nlp/</link>
+      <pubDate>Wed, 10 Apr 2019 21:10:24 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

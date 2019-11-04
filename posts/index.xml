@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Raja Biswas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Aug 2019 21:11:12 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 Nov 2019 21:12:08 +0800</lastBuildDate>
     
 	<atom:link href="https://rbiswasfc.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Word Embeddings</title>
+      <link>https://rbiswasfc.github.io/posts/nlp/word_embeddings/</link>
+      <pubDate>Sat, 02 Nov 2019 21:12:08 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/nlp/word_embeddings/</guid>
+      <description>Summary of word embeddings
+ word2vec glove fasttext  import numpy as np  </description>
+    </item>
+    
+    <item>
+      <title>Mitigation of unintended bias in text classification</title>
+      <link>https://rbiswasfc.github.io/posts/nlp/jigsaw_bias/</link>
+      <pubDate>Fri, 09 Aug 2019 21:12:08 +0800</pubDate>
+      
+      <guid>https://rbiswasfc.github.io/posts/nlp/jigsaw_bias/</guid>
+      <description> Kaggle comprtition organized by Jigsaw Conversation AI. It was second edition of the competion.
+Bias Metrics  BPSN SPBN Subgroup  Combined tbc
+Mod import numpy as np  </description>
+    </item>
     
     <item>
       <title>A bottom-up recommender system for travel destinations</title>

@@ -3,6 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rbiswasfc.github.io/tags/deep-learning/</loc>
+    <lastmod>2019-11-02T21:12:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/nlp/</loc>
+    <lastmod>2019-11-02T21:12:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/posts/</loc>
+    <lastmod>2019-11-02T21:12:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/</loc>
+    <lastmod>2019-11-02T21:12:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/</loc>
+    <lastmod>2019-11-02T21:12:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/posts/nlp/word_embeddings/</loc>
+    <lastmod>2019-11-02T21:12:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/bert/</loc>
+    <lastmod>2019-08-09T21:12:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/tags/lstm/</loc>
+    <lastmod>2019-08-09T21:12:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rbiswasfc.github.io/posts/nlp/jigsaw_bias/</loc>
+    <lastmod>2019-08-09T21:12:08+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rbiswasfc.github.io/posts/projects/deepfly/</loc>
     <lastmod>2019-08-03T21:11:12+08:00</lastmod>
   </url>
@@ -10,36 +62,6 @@
   <url>
     <loc>https://rbiswasfc.github.io/tags/data-science/</loc>
     <lastmod>2019-08-03T21:11:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rbiswasfc.github.io/tags/deep-learning/</loc>
-    <lastmod>2019-08-03T21:11:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rbiswasfc.github.io/posts/</loc>
-    <lastmod>2019-08-03T21:11:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rbiswasfc.github.io/</loc>
-    <lastmod>2019-08-03T21:11:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rbiswasfc.github.io/tags/</loc>
-    <lastmod>2019-08-03T21:11:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rbiswasfc.github.io/tags/nlp/</loc>
-    <lastmod>2019-07-12T21:09:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
